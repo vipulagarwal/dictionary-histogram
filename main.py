@@ -10,14 +10,13 @@ def getLetterCount(filename):
 
     with open(filename) as file:
         for word in file:
-            for s in word.lower(): 
+            for s in word.lower():
                 if re.match('[a-z]', s): # ensure we only match letters
                     if s in letter_count:
                         letter_count[s] += 1
                     else:
                         letter_count[s] = 1
 
-    print(letter_count) 
     return(letter_count)
 
 
@@ -33,7 +32,7 @@ def main():
         createHistogram(sorted_letter_count) # produce visual histogram
     except:
         print("There was an error processing the file")
-    
+
 
 if __name__ == "__main__":
     main()
